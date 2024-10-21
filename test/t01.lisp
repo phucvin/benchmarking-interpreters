@@ -1,4 +1,4 @@
-(let a 1)
-
 (def main ()
     (+ a 2))
+
+(let a 1)
