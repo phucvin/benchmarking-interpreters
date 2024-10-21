@@ -130,6 +130,10 @@ func valueInterpretList(list []value, ctx map[string]value) value {
 		}
 
 		return valueInterpret(args[2], ctx)
+	case "let":
+		name := args[0]
+		ctx[*name.identifier] = valueInterpret(args[1], ctx)
+		return ctx[*name.identifier]
 	case "def":
 		name := args[0]
 		params := args[1]
